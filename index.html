@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DeployForge is a learning-focused online code playground with DevOps learning notes and deployment workflow guides.">
+  <meta name="theme-color" content="#0b1020">
+  <title>DeployForge — Code, Build, Ship</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="DeployForge home">
+      <span class="brand-mark">DF<span>↗</span></span>
+      <span class="brand-copy"><strong>DeployForge</strong><small>CODE · BUILD · SHIP</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#playground">Playground</a><a href="#devops">DevOps path</a><a href="#workflow">Workflow</a>
+    </nav>
+    <a class="top-cta" href="#playground">Open playground <span>↘</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> YOUR BUILD SPACE</div>
+        <h1>Turn ideas into<br><span class="gradient-text">working code.</span></h1>
+        <p class="hero-lede">A practical coding playground for learners who want to write code, understand delivery pipelines, and build toward a DevOps career.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#playground">Try the playground <span>↗</span></a>
+          <a class="button button-quiet" href="#devops">Explore DevOps path</a>
+        </div>
+        <div class="hero-proof"><span class="avatar-stack"><i>JS</i><i>CI</i><i>CD</i></span><span>Made for curious builders, from first line to first deployment.</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Illustration of a code editor and delivery pipeline">
+        <div class="visual-window">
+          <div class="window-bar"><div class="window-dots"><b></b><b></b><b></b></div><span>hello-world.js</span><span class="window-status"><i></i> READY</span></div>
+          <div class="mini-editor">
+            <div class="line"><em>01</em><code><span class="purple">const</span> project = <span class="green">"your-idea"</span>;</code></div>
+            <div class="line"><em>02</em><code><span class="purple">function</span> <span class="blue">build</span>() {</code></div>
+            <div class="line"><em>03</em><code>&nbsp;&nbsp;<span class="blue">return</span> <span class="green">"something great"</span>;</code></div>
+            <div class="line"><em>04</em><code>}</code></div>
+            <div class="line"><em>05</em><code><span class="yellow">console</span>.log(build());<span class="cursor"></span></code></div>
+          </div>
+          <div class="mini-terminal"><div><span class="terminal-prompt">➜</span> npm run build</div><p><span>✓</span> Build completed <small>in 0.42s</small></p></div>
+        </div>
+        <div class="float-card float-card-top"><span class="float-icon">↗</span><div><strong>Ship with confidence</strong><small>Learn by building</small></div></div>
+        <div class="float-card float-card-bottom"><span class="float-check">✓</span><div><strong>Pipeline ready</strong><small>Plan · Build · Test · Deploy</small></div></div>
+      </div>
+    </section>
+
+    <section class="stats-row" aria-label="Platform highlights">
+      <div><strong>01</strong><span>Write & test</span></div><div><strong>02</strong><span>Learn the workflow</span></div><div><strong>03</strong><span>Build DevOps skills</span></div><div class="stats-note"><span class="status-dot"></span> Learning project · In active development</div>
+    </section>
+
+    <section class="playground section" id="playground">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE PLAYGROUND</div><h2>Write it. <span class="gradient-text">Run it.</span> Learn it.</h2></div>
+        <p>Try JavaScript or preview an HTML snippet right in your browser. No account required for this demo.</p>
+      </div>
+      <div class="ide-shell">
+        <div class="ide-toolbar">
+          <div class="ide-file"><span class="file-glyph">⌘</span><span id="filename">main.js</span><span class="unsaved-dot"></span></div>
+          <div class="ide-controls">
+            <label class="sr-only" for="language">Choose language</label>
+            <select id="language"><option value="javascript">JavaScript</option><option value="html">HTML Preview</option></select>
+            <button class="button button-run" id="run-button"><span>▶</span> Run code</button>
+            <button class="icon-button" id="reset-button" title="Reset example" aria-label="Reset example">↺</button>
+          </div>
+        </div>
+        <div class="ide-body">
+          <div class="editor-pane">
+            <div class="pane-label"><span>EDITOR</span><span id="editor-mode">JAVASCRIPT</span></div>
+            <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Code editor">const learner = "Builder";
+const nextStep = "Deploy";
+
+console.log(`Hello, ${learner}!`);
+console.log(`Your next step: ${nextStep}.`);</textarea>
+            <div class="editor-footer"><span><i class="status-dot"></i> Ready to run</span><span>UTF-8 <b>·</b> Spaces: 2</span></div>
+          </div>
+          <div class="output-pane">
+            <div class="pane-label"><span id="output-title">OUTPUT</span><button id="clear-output" class="text-button">Clear</button></div>
+            <pre id="output" aria-live="polite">Your result will appear here.</pre>
+            <iframe id="preview" title="HTML preview output" sandbox="allow-scripts" hidden></iframe>
+            <div class="output-hint"><span class="hint-icon">i</span><span>This is a browser-based learning demo. Server-side languages require a secure execution backend.</span></div>
+          </div>
+        </div>
+        <div class="ide-bottom"><span><span class="status-dot"></span> Local demo environment</span><span>Built for learning, not production execution</span></div>
+      </div>
+      <div class="sample-row"><span>Try a sample:</span><button data-sample="hello">Hello world</button><button data-sample="loop">Loop</button><button data-sample="html">HTML card</button></div>
+    </section>
+
+    <section class="devops section" id="devops">
+      <div class="section-heading">
+        <div><div class="eyebrow">YOUR NEXT SKILL</div><h2>Think beyond the code.</h2></div>
+        <p>Connect programming practice to the tools and habits used to build, test, and deliver software.</p>
+      </div>
+      <div class="devops-grid">
+        <article class="skill-card skill-featured"><div class="card-top"><span class="skill-symbol symbol-blue">⌘</span><span class="card-tag">START HERE</span></div><h3>Version control</h3><p>Track changes, work with branches, and publish projects using Git and GitHub.</p><div class="tag-list"><span>git init</span><span>commit</span><span>push</span></div><a href="https://git-scm.com/docs" target="_blank" rel="noreferrer">Explore Git docs <span>↗</span></a></article>
+        <article class="skill-card"><div class="card-top"><span class="skill-symbol symbol-cyan">▦</span><span class="card-tag">PACKAGE</span></div><h3>Containers</h3><p>Learn how Docker packages an app and its dependencies into a repeatable unit.</p><div class="tag-list"><span>Dockerfile</span><span>image</span><span>container</span></div><a href="https://docs.docker.com/get-started/" target="_blank" rel="noreferrer">Explore Docker docs <span>↗</span></a></article>
+        <article class="skill-card"><div class="card-top"><span class="skill-symbol symbol-violet">⟳</span><span class="card-tag">AUTOMATE</span></div><h3>CI/CD pipeline</h3><p>Automate checks and delivery so every change follows a consistent workflow.</p><div class="tag-list"><span>test</span><span>build</span><span>deploy</span></div><a href="https://www.jenkins.io/doc/" target="_blank" rel="noreferrer">Explore Jenkins docs <span>↗</span></a></article>
+        <article class="skill-card"><div class="card-top"><span class="skill-symbol symbol-orange">◇</span><span class="card-tag">ORCHESTRATE</span></div><h3>Kubernetes</h3><p>Understand deployments, services, health checks, and how containerized apps run.</p><div class="tag-list"><span>Pod</span><span>Service</span><span>Deployment</span></div><a href="https://kubernetes.io/docs/home/" target="_blank" rel="noreferrer">Explore Kubernetes docs <span>↗</span></a></article>
+      </div>
+    </section>
+
+    <section class="workflow section" id="workflow">
+      <div class="workflow-copy"><div class="eyebrow">FROM COMMIT TO DELIVERY</div><h2>A simple path to<br><span class="gradient-text">shipping software.</span></h2><p>DevOps is a set of practices, not one tool. Start with a small app, automate checks, package it, then deploy and observe it.</p><a class="button button-primary" href="https://roadmap.sh/devops" target="_blank" rel="noreferrer">View learning roadmap <span>↗</span></a></div>
+      <div class="pipeline">
+        <div class="pipeline-step"><span class="pipeline-icon">⌨</span><div><strong>Code</strong><small>Make a change</small></div><span class="step-number">01</span></div>
+        <div class="pipeline-connector"></div>
+        <div class="pipeline-step"><span class="pipeline-icon">✓</span><div><strong>Test</strong><small>Check quality</small></div><span class="step-number">02</span></div>
+        <div class="pipeline-connector"></div>
+        <div class="pipeline-step"><span class="pipeline-icon">▦</span><div><strong>Build</strong><small>Package the app</small></div><span class="step-number">03</span></div>
+        <div class="pipeline-connector"></div>
+        <div class="pipeline-step pipeline-final"><span class="pipeline-icon">↗</span><div><strong>Deploy</strong><small>Release with care</small></div><span class="step-number">04</span></div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div><div class="eyebrow">KEEP BUILDING</div><h2>Small projects. Real skills.</h2><p>Make this playground your first step toward a portfolio-ready DevOps project.</p></div>
+      <a class="button button-light" href="#playground">Back to editor ↑</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#"><span class="brand-mark">DF<span>↗</span></span><span class="brand-copy"><strong>DeployForge</strong><small>CODE · BUILD · SHIP</small></span></a><span>Independent learning project · Not affiliated with any tool vendor.</span><a href="#playground">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
