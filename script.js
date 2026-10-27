@@ -74,7 +74,7 @@
     }
 
     try {
-      const response = await fetch("https://deployforge-backend.onrender.com/", {
+const response = await fetch("https://deployforge-backend.onrender.com/run", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
