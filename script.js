@@ -130,7 +130,7 @@ const response = await fetch("https://deployforge-backend.onrender.com/run", {
       alert("Copy failed. Please open the website using HTTPS.");
     }
   });
-  });
+s
 
   document.querySelectorAll("[data-sample]").forEach(button => {
     button.addEventListener("click", () => {
@@ -149,4 +149,4 @@ const response = await fetch("https://deployforge-backend.onrender.com/run", {
   });
 
   setMode();
-})();
+)();
