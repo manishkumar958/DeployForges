@@ -86,7 +86,13 @@ console.log(`Your next step: ${nextStep}.`);</textarea>
             <div class="editor-footer"><span><i class="status-dot"></i> Ready to run</span><span>UTF-8 <b>·</b> Spaces: 2</span></div>
           </div>
           <div class="output-pane">
-            <div class="pane-label"><span id="output-title">OUTPUT</span><button id="clear-output" class="text-button">Clear</button></div>
+            <div class="pane-label">
+  <span id="output-title">OUTPUT</span>
+  <div>
+    <button id="copy-output" class="text-button">Copy Output</button>
+    <button id="clear-output" class="text-button">Clear</button>
+  </div>
+</div>
             <pre id="output" aria-live="polite">Your result will appear here.</pre>
             <iframe id="preview" title="HTML preview output" sandbox="allow-scripts" hidden></iframe>
             <div class="output-hint"><span class="hint-icon">i</span><span>This is a browser-based learning demo. Server-side languages require a secure execution backend.</span></div>

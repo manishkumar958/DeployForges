@@ -122,10 +122,14 @@ const response = await fetch("https://deployforge-backend.onrender.com/run", {
     setMode();
   });
 
-  document.getElementById("clear-output").addEventListener("click", () => {
-    output.textContent = "";
-    preview.hidden = true;
-    output.hidden = false;
+  document.getElementById("copy-output").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(output.innerText);
+      alert("Output copied successfully!");
+    } catch (error) {
+      alert("Copy failed. Please open the website using HTTPS.");
+    }
+  });
   });
 
   document.querySelectorAll("[data-sample]").forEach(button => {
