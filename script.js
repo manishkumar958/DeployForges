@@ -42,6 +42,7 @@
   }
 
   async function runCode() {
+    const sourceCode = code.value;
     const lang = language.value.toLowerCase();
     preview.hidden = true;
     output.hidden = false;
@@ -61,6 +62,7 @@
         const safeConsole = { log: logger, warn: logger, error: logger };
         new Function("console", code.value)(safeConsole);
         output.textContent = logs.join("\n") || "Code executed successfully.";
+addToHistory(lang, sourceCode, output.textContent);
       } catch (error) {
         output.textContent = "Error: " + error.message;
       }
@@ -97,12 +99,57 @@ const response = await fetch("https://deployforge-backend.onrender.com/run", {
         result.stderr ||
         result.message ||
         "Program finished without output.";
+        addToHistory(lang, sourceCode, output.textContent);
     } catch (error) {
       output.textContent =
         "Could not connect to the local backend. Make sure python app.py is running. " +
         error.message;
     }
   }
+  const historyList = document.getElementById("history-list");
+  const clearHistoryButton = document.getElementById("clear-history");
+  const runHistory = [];
+
+  function addToHistory(lang, sourceCode, resultText) {
+    runHistory.unshift({
+      language: lang.toUpperCase(),
+      code: sourceCode,
+      output: resultText,
+      time: new Date().toLocaleTimeString()
+    });
+
+    runHistory.splice(5);
+
+    historyList.innerHTML = "";
+
+    runHistory.forEach((item, index) => {
+      const entry = document.createElement("details");
+      const heading = document.createElement("summary");
+      const codeBlock = document.createElement("pre");
+      const outputBlock = document.createElement("pre");
+
+      heading.textContent = `${item.language} · ${item.time}`;
+      codeBlock.textContent = item.code;
+      outputBlock.textContent = item.output;
+
+      entry.append(heading);
+
+      const codeLabel = document.createElement("p");
+      codeLabel.textContent = "Code";
+      entry.append(codeLabel, codeBlock);
+
+      const outputLabel = document.createElement("p");
+      outputLabel.textContent = "Output";
+      entry.append(outputLabel, outputBlock);
+
+      historyList.append(entry);
+    });
+  }
+
+  clearHistoryButton.addEventListener("click", () => {
+    runHistory.length = 0;
+    historyList.textContent = "No runs yet. Run your first program!";
+  });
 
   language.addEventListener("change", () => {
     setMode();

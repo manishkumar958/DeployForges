@@ -95,7 +95,15 @@ console.log(`Your next step: ${nextStep}.`);</textarea>
 </div>
             <pre id="output" aria-live="polite">Your result will appear here.</pre>
             <iframe id="preview" title="HTML preview output" sandbox="allow-scripts" hidden></iframe>
-            <div class="output-hint"><span class="hint-icon">i</span><span>This is a browser-based learning demo. Server-side languages require a secure execution backend.</span></div>
+            <div class="run-history">
+  <div class="pane-label">
+    <span>RUN HISTORY</span>
+    <button id="clear-history" class="text-button">Clear History</button>
+  </div>
+  <div id="history-list">
+    <p>No runs yet. Run your first program!</p>
+  </div>
+</div>
           </div>
         </div>
         <div class="ide-bottom"><span><span class="status-dot"></span> Local demo environment</span><span>Built for learning, not production execution</span></div>
