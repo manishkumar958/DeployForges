@@ -119,6 +119,7 @@ const response = await fetch("https://deployforge-backend.onrender.com/run", {
     });
 
     runHistory.splice(5);
+if(!historyList) return;
 
     historyList.innerHTML = "";
 
